@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:EXP-{YYYY}-{MM}-{DD}-{####}",
+ "creation": "2024-05-04 08:44:02.881104",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "column_break_ncp3w",
+  "posting_time",
+  "section_break_va9vm",
+  "company",
+  "column_break_smrpk",
+  "section_break_aauo",
+  "account",
+  "column_break_ovkq",
+  "debit_account",
+  "section_break_njyv",
+  "description",
+  "section_break_njgmz",
+  "expense_account",
+  "amount",
+  "journal_no",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u062a\u0627\u0631\u064a\u062e",
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0648\u0642\u062a",
+   "reqd": 1
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u062d\u0633\u0627\u0628 \u0627\u0644\u062f\u0641\u0639",
+   "link_filters": "[[\"Account\",\"company\",\"=\",\"eval:doc.company\"],[\"Account\",\"account_type\",\"in\",[\"Bank\",\"Cash\"]]]",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "\u062d\u0633\u0627\u0628 \u0627\u0644\u0645\u0635\u0631\u0648\u0641"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "\u0648\u0635\u0641 \u0627\u0644\u0645\u0635\u0631\u0648\u0641 (\u0627\u0646 \u0648\u062c\u062f)"
+  },
+  {
+   "default": "00",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u0635\u0631\u0648\u0641",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Expenses",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "journal_no",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0642\u064a\u062f \u0627\u0644\u064a\u0648\u0645\u064a\u0629",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ncp3w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_va9vm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_smrpk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_njgmz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "debit_account",
+   "fieldtype": "Link",
+   "label": "\u062d\u0633\u0627\u0628 \u0627\u0644\u0645\u0635\u0631\u0648\u0641",
+   "link_filters": "[[\"Account\",\"company\",\"=\",\"eval:doc.company\"],[\"Account\",\"account_type\",\"=\",\"Expense Account\"],[\"Account\",\"is_group\",\"=\",0]]",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_njyv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_aauo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ovkq",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-10-11 04:23:18.070148",
+ "modified_by": "Administrator",
+ "module": "Direct Expenses",
+ "name": "Expenses",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

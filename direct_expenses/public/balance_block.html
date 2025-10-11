@@ -1,0 +1,52 @@
+<div class="balance-widget" data-company="" data-account="">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent-weak: #eff6ff;
+      --row-alt: #fafafa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --fg: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #1f2937;
+        --accent-weak: #0b1a3a;
+        --row-alt: #0e1728;
+      }
+    }
+    .balance-widget { background: linear-gradient(180deg, var(--bg) 0%, var(--accent-weak) 100%); border: 1px solid var(--border); border-radius: 14px; padding: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .bw-header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .bw-title { font-weight: 700; letter-spacing: .2px; font-size: 1.05rem; }
+    .bw-meta { color: var(--muted); font-size: .9rem; }
+    .bw-table-wrap { overflow-x: auto; }
+    table.bw-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+    .bw-table thead th { text-align: left; padding: 10px 12px; font-size: .85rem; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    .bw-table tbody td { padding: 12px; border-bottom: 1px dashed var(--border); }
+    .bw-table tbody tr:nth-child(odd) { background: var(--row-alt); }
+    .bw-table .right { text-align: right; }
+    .bw-table tbody tr:hover { background: rgba(37, 99, 235, 0.06); }
+    .empty { color: var(--muted); text-align: center; padding: 12px; }
+  </style>
+
+  <div class="bw-header">
+    <div class="bw-title">Account Balances</div>
+    <div class="bw-meta"></div>
+  </div>
+  <div class="bw-table-wrap">
+    <table class="bw-table" role="table" aria-label="Account Balances">
+      <thead>
+        <tr>
+          <th>Account</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="placeholder"><td class="empty" colspan="2">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
